@@ -18,7 +18,6 @@ im = Image.open('portraits/group1.jpg')
 imgWidth, imgHeight = im.size
 draw = ImageDraw.Draw(im)
 
-
 for faceDetail in req_resp['FaceDetails']:
     print('The detected face is between ' + str(faceDetail['AgeRange']['Low'])
           + ' and ' + str(faceDetail['AgeRange']['High']) + ' years old')
@@ -48,32 +47,3 @@ for faceDetail in req_resp['FaceDetails']:
     # draw.rectangle([left,top, left + width, top + height], outline='#00d400')
 
 im.show()
-
-BoundingBox = (req_resp['FaceDetails'][0]['BoundingBox'])
-'''left_coordinate = BoundingBox['Left'] * width
-
-top_coordinate = (BoundingBox['Top']) * height
-
-face_width = BoundingBox['Width'] * width
-
-face_height = BoundingBox['Height'] * height
-
-print(left_coordinate, top_coordinate, face_width, face_height)
-
-fig, ax = plt.subplots(1)
-
-# Display the image
-ax.imshow(img)
-
-# Create a Rectangle patch
-rect = patches.Rectangle((left_coordinate, top_coordinate), face_width, face_height, linewidth=1, edgecolor='r',
-                         facecolor='none')
-
-# Add the patch to the Axes
-ax.add_patch(rect)
-
-plt.show()'''
-
-'''print('Labels')
-for label in req_resp['Labels']:
-    print("Label: " + label['Name'] + ", confidence: " + str(label['Confidence']))'''
