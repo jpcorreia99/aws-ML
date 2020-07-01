@@ -1,9 +1,6 @@
 import boto3
 from get_images import *
 
-
-
-
 print('ok')
 img_bytes = get_image_from_file('images/seoul.jpg')
 
